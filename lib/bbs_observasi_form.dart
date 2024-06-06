@@ -179,7 +179,7 @@ class _ObservasiFormState extends State<ObservasiForm> {
   Future<void> _fetchKaryawanData() async {
     try {
       final response = await http
-          .get(Uri.parse('http://10.0.2.2/flutterapi/get_karyawan.php'));
+          .get(Uri.parse('http://192.168.1.22/flutterapi/get_karyawan.php'));
 
       if (response.statusCode == 200) {
         List jsonResponse = json.decode(response.body)['data'];
@@ -316,7 +316,7 @@ class _ObservasiFormState extends State<ObservasiForm> {
   }
 
   void _saveObservasi() async {
-    final url = 'http://10.0.2.2/flutterapi/observasi.php';
+    final url = 'http://192.168.1.22/flutterapi/observasi.php';
 
     final Map<String, dynamic> observasiData = {
       'tanggal': _tanggalController.text,

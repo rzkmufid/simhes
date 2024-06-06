@@ -57,7 +57,7 @@ class _InsidenDetailPageState extends State<InsidenDetailPage> {
     if (_formKey.currentState!.validate()) {
       try {
         final response = await http.post(
-          Uri.parse('http://10.0.2.2/flutterapi/insert_insiden.php'),
+          Uri.parse('http://192.168.1.22/flutterapi/insert_insiden.php'),
           body: {
             'id_karyawan': _selectedKaryawan!.id.toString(),
             'tanggal': _selectedDate.toIso8601String().split('T')[0],
@@ -103,7 +103,7 @@ class _InsidenDetailPageState extends State<InsidenDetailPage> {
 
   Future<List<Karyawan>> fetchKaryawan() async {
     final response = await http
-        .get(Uri.parse('http://10.0.2.2/flutterapi/get_karyawan.php'));
+        .get(Uri.parse('http://192.168.1.22/flutterapi/get_karyawan.php'));
 
     if (response.statusCode == 200) {
       List jsonResponse = json.decode(response.body)['data'];

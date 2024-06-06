@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
 
     if (username.isNotEmpty && password.isNotEmpty) {
       // Ganti URL ini dengan URL endpoint API Anda
-      var url = Uri.parse('http://10.0.2.2/flutterapi/login.php');
+      var url = Uri.parse('http://192.168.1.22/flutterapi/login.php');
       var response = await http.post(
         url,
         headers: {'Content-Type': 'application/json'},
